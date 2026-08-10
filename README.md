@@ -4,17 +4,11 @@ A self-directed home lab where I stood up the core identity and network infrastr
 # Active Directory Home Lab — Learning How Identity and Access Actually Work
 
 > A self-directed lab I'm building to understand — not just configure — how directory services, authentication, and access control fit together in a Windows environment. I'm preparing for a role in IT/systems administration, and I wanted the concepts I'm studying to become something I could reason about, not just memorize.
-
-![Platform](https://img.shields.io/badge/Windows%20Server-2022-0078D6)
-![Automation](https://img.shields.io/badge/PowerShell-Automation-5391FE)
-![Focus](https://img.shields.io/badge/Focus-Identity%20%26%20Access-183A61)
-![Status](https://img.shields.io/badge/Part%201-Complete-2E7D32)
-
 ---
 
 ## Why I built this
 
-I kept running into the same wall while studying: I could recite what Active Directory, DNS, DHCP, and Group Policy *were*, but I couldn't really explain how they depended on each other, or what actually happens when a user logs in. Definitions weren't turning into understanding.
+I kept running into the same wall while studying: I could recite what Active Directory, DNS, DHCP, and Group Policy *where*, but I couldn't really explain how they depended on each other, or what actually happens when a user logs in. Definitions weren't turning into understanding.
 
 So I built the thing from scratch. One Windows Server, a fake company (`corp.marc.com`), and a rule for myself: **don't move to the next step until I can explain why the last one was necessary.** This repo is the record of that — what I set up, what broke, what confused me, and what finally made it click.
 
