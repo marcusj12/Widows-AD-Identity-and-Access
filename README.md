@@ -108,8 +108,8 @@ The meta-lesson: **most "errors" are messages, not disasters.** Reading them slo
 .
 ├── README.md
 ├── scripts/
-│   ├── create-users.ps1
-│   ├── create-groups.ps1
+│   ├── Cre.ps1
+│   ├── CreateSecGroups.ps1
 │   └── users.csv
 └── screenshots/
     ├── architecture.png
