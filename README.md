@@ -24,7 +24,7 @@ It's a work in progress on purpose. Part 1 (below) builds the foundation of *ide
 | **`corp.marc.com`** | The domain — the whole network "kingdom" | NetBIOS: `CORP` |
 | **Network** | Isolated lab subnet in VirtualBox | `192.168.163.0/24` |
 
-> _Diagram: `![Architecture](screenshots/architecture.png)`_
+<img width="2720" height="2000" alt="ad_lab_network_topology" src="https://github.com/user-attachments/assets/b9e53c4a-2ad9-4173-8fd2-6f754650710f" />
 
 ---
 
