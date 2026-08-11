@@ -1,4 +1,3 @@
-# Widows-AD-Identity-and-Access
 # Active Directory Home Lab — Learning How Identity and Access Actually Work
 
 > A self-directed lab I'm building to understand — not just configure — how directory services, authentication, and access control fit together in a Windows environment. I'm preparing for a role in IT/systems administration, and I wanted the concepts I'm studying to become something I could reason about, not just memorize.
