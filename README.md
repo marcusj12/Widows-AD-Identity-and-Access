@@ -24,6 +24,19 @@ It's a work in progress on purpose. Part 1 (below) builds the foundation of *ide
 <img width="2720" height="2000" alt="ad_lab_network_topology" src="https://github.com/user-attachments/assets/b9e53c4a-2ad9-4173-8fd2-6f754650710f" />
 
 ---
+## The Setup: Getting Things Ready:
+### Setting Up Server 2022
+<img width="965" height="712" alt="Screenshot 2026-07-14 at 11 33 11 PM" src="https://github.com/user-attachments/assets/452a4737-77c2-4e16-989f-d1ebb8229908" />
+
+### Setting Up Active Directory
+*Notice that the Orginal Server name was WIN-LAAM34FL0AK, later changed to NB-DC01*
+<img width="1011" height="771" alt="Screenshot 2026-07-15 at 7 33 05 PM" src="https://github.com/user-attachments/assets/c9b6717c-1c19-452a-80d0-5a366e0ea506" />
+
+<img width="1390" height="775" alt="AD DS Conf" src="https://github.com/user-attachments/assets/1391114d-0c15-4499-929d-59188066ae84" />
+
+
+
+
 
 ## Part 1 — Building identity (what I did, and what each step taught me)
 
@@ -32,14 +45,18 @@ I installed Windows Server 2022 and promoted it to a domain controller. The firs
 
 **What clicked:** every other machine on the network is going to be told "ask this server to log you in and to look up names." If that server's address could change out from under them, the whole network would break. Infrastructure has to sit still. That's the difference between a server and a client, and I didn't really *get* it until I had to configure it.
 
-> `![DC health check](screenshots/phase1-dcdiag.png)`
+<img width="1284" height="871" alt="Server Static IP Conf" src="https://github.com/user-attachments/assets/3dd2cf15-2159-4188-9cf3-b922a9607116" />
+
+<img width="1123" height="670" alt="Screenshot 2026-07-26 at 7 46 10 PM" src="https://github.com/user-attachments/assets/19ca9eca-3af1-4e06-a3c4-44d46a0d9b69" />
+
 
 ### DNS — the piece I didn't know I already had
 At one point I panicked because I didn't remember ever installing DNS. It turned out DNS had been installed automatically when I promoted the domain controller.
 
 **What clicked:** a Windows domain *cannot exist* without DNS — it's how clients even find the domain controller to authenticate against. DNS isn't a separate add-on to Active Directory; it's the foundation AD stands on. Realizing that reframed how I think about the whole stack: names have to resolve before anything else can happen.
 
-> `![DNS zone](screenshots/phase2-dns-zone.png)`
+<img width="1494" height="932" alt="ADDomain conf 1 4" src="https://github.com/user-attachments/assets/360ea563-fcf7-473b-9dfc-cf157d4879b4" />
+
 
 ### DHCP — and why the network wouldn't just let me turn it on
 I had DHCP installed but it refused to hand out addresses. The error said it wasn't "authorized."
