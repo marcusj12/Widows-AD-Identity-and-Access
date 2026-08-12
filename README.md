@@ -83,11 +83,11 @@ I built an organized folder structure (OUs) for departments, then created users.
 
 <img width="1339" height="990" alt="Screenshot 2026-08-11 at 8 53 15 PM" src="https://github.com/user-attachments/assets/28125c79-b49b-4fe0-ae98-a7c45d30ca18" />
 
-### CLI AD User Check
+### CLI AD User Check:
 
 <img width="1278" height="722" alt="ADUserCheck4 2 2" src="https://github.com/user-attachments/assets/275084a3-e834-4042-b70f-5bd280e68c06" />
 
-### Python Automation Script for adding user to Security Groups
+### Python Automation Script for adding user to Security Groups:
 
 <img width="1096" height="790" alt="CreateSecGroupScript4 3" src="https://github.com/user-attachments/assets/87309693-6166-4ecd-9ec7-291b56e1c638" />
 
@@ -95,11 +95,11 @@ I redundantly entered the same came cmmd that ran the powershell script containi
 
 <img width="1116" height="597" alt="Redundant Script 4 3 2" src="https://github.com/user-attachments/assets/0482f780-23ea-4b1d-a5b5-cb1494997ff6" />
 
-### UserName Check:
+UserName Check:
 
 <img width="1188" height="645" alt="UserNameDepCheck4 3 3" src="https://github.com/user-attachments/assets/91f29598-4e17-4020-b3af-fad0c2b14a43" />
 
-### Full Directory Check:
+Full Directory Check:
 
 <img width="1202" height="702" alt="FullDirectoryCheck4 3 4" src="https://github.com/user-attachments/assets/b7ece018-7855-44bb-bf03-cc0e8a70e4f3" />
 
