@@ -55,11 +55,8 @@ At one point I panicked because I didn't remember ever installing DNS. It turned
 
 **What clicked:** a Windows domain *cannot exist* without DNS — it's how clients even find the domain controller to authenticate against. DNS isn't a separate add-on to Active Directory; it's the foundation AD stands on. The "phone book" works in both the ways clients rely on: looking up the domain itself, and looking up the server by its full name. If clients can't resolve names, they can't find the DC to log in. Realizing that reframed how I think about the whole stack: names have to resolve before anything else can happen.
 
-
-
-<img width="1494" height="932" alt="ADDomain conf 1 4" src="https://github.com/user-attachments/assets/360ea563-fcf7-473b-9dfc-cf157d4879b4" />
-
-#### Test Name Resolve:
+#### Test Name Resolve: 
+** Host A is pointing too IP 192.168.163.133
 
 <img width="1361" height="968" alt="DNS Manager Conf2 1" src="https://github.com/user-attachments/assets/b64f4859-b940-4ce7-999b-aea604a37e21" />
 
@@ -70,8 +67,6 @@ At one point I panicked because I didn't remember ever installing DNS. It turned
 #### Creating Reverse Lookup Zones 
 
 **Why: Scavenges stale records and updates them automatically, so the "phone book" stays accurate**
-
-<img width="1374" height="710" alt="NB-DCO1 DNS Res2 1PS" src="https://github.com/user-attachments/assets/ec707172-d7dc-42f2-8c4c-7942f0cd007a" />
 
 <img width="1321" height="930" alt="Reverese Zone lookup2 2" src="https://github.com/user-attachments/assets/0b49de93-afb5-4396-913d-bce94e1b68f2" />
 
