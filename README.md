@@ -70,7 +70,39 @@ I built an organized folder structure (OUs) for departments, then created users.
 
 **What clicked:** this is *why* PowerShell exists in this world. I wrote a script that reads a spreadsheet and creates every account with a consistent username scheme, drops each person into their department's folder, and forces a password reset on first login. Then I built security groups and had a script auto-fill them by reading each user's department. Twenty users, correct and identical, in seconds. Automation stopped being a buzzword and became an obvious answer to a real problem I'd just felt.
 
-> `![Users and groups](screenshots/phase4-users-groups.png)`
+### Create a users.csv file
+<img width="1095" height="666" alt="UserNameCsv4 2" src="https://github.com/user-attachments/assets/5b514a92-86f1-4174-a858-52e3ae5daeda" />
+
+###Successful Organizational Unit (OU) and Corp Org Tree Setup:
+
+<img width="1484" height="896" alt="OU Tree Setup4 1" src="https://github.com/user-attachments/assets/26e0c0d7-64c0-4050-9e05-e2dc3d9a074a" />
+
+<img width="1180" height="707" alt="CorpOrg Tree4 1 2" src="https://github.com/user-attachments/assets/522033bb-eb30-463c-84dc-4bb0bfa5b381" />
+
+### Python Script to import users from user.csv, build a Username, create a account and account password parameters:
+
+<img width="1339" height="990" alt="Screenshot 2026-08-11 at 8 53 15 PM" src="https://github.com/user-attachments/assets/28125c79-b49b-4fe0-ae98-a7c45d30ca18" />
+
+### CLI AD User Check
+
+<img width="1278" height="722" alt="ADUserCheck4 2 2" src="https://github.com/user-attachments/assets/275084a3-e834-4042-b70f-5bd280e68c06" />
+
+### Python Automation Script for adding user to Security Groups
+
+<img width="1096" height="790" alt="CreateSecGroupScript4 3" src="https://github.com/user-attachments/assets/87309693-6166-4ecd-9ec7-291b56e1c638" />
+
+I redundantly entered the same came cmmd that ran the powershell script containing instuctions to assign users groups to the appropriate Department
+
+<img width="1116" height="597" alt="Redundant Script 4 3 2" src="https://github.com/user-attachments/assets/0482f780-23ea-4b1d-a5b5-cb1494997ff6" />
+
+### UserName Check:
+
+<img width="1188" height="645" alt="UserNameDepCheck4 3 3" src="https://github.com/user-attachments/assets/91f29598-4e17-4020-b3af-fad0c2b14a43" />
+
+### Full Directory Check:
+
+<img width="1202" height="702" alt="FullDirectoryCheck4 3 4" src="https://github.com/user-attachments/assets/b7ece018-7855-44bb-bf03-cc0e8a70e4f3" />
+
 
 ---
 
