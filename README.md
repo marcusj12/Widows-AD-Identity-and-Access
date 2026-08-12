@@ -40,7 +40,7 @@ It's a work in progress on purpose. Part 1 (below) builds the foundation of *ide
 
 ## Part 1 — Building identity (what I did, and what each step taught me)
 
-### Standing up the domain controller
+### Phase 1: Standing up the domain controller
 I installed Windows Server 2022 and promoted it to a domain controller. The first thing that actually taught me something wasn't a feature — it was being forced to give the server a **static IP**.
 
 **What clicked:** every other machine on the network is going to be told "ask this server to log you in and to look up names." If that server's address could change out from under them, the whole network would break. Infrastructure has to sit still. That's the difference between a server and a client, and I didn't really *get* it until I had to configure it.
@@ -50,21 +50,44 @@ I installed Windows Server 2022 and promoted it to a domain controller. The firs
 <img width="1123" height="670" alt="Screenshot 2026-07-26 at 7 46 10 PM" src="https://github.com/user-attachments/assets/19ca9eca-3af1-4e06-a3c4-44d46a0d9b69" />
 
 
-### DNS — the piece I didn't know I already had
+### Phase 2: DNS — the piece I didn't know I already had
 At one point I panicked because I didn't remember ever installing DNS. It turned out DNS had been installed automatically when I promoted the domain controller.
 
-**What clicked:** a Windows domain *cannot exist* without DNS — it's how clients even find the domain controller to authenticate against. DNS isn't a separate add-on to Active Directory; it's the foundation AD stands on. Realizing that reframed how I think about the whole stack: names have to resolve before anything else can happen.
+**What clicked:** a Windows domain *cannot exist* without DNS — it's how clients even find the domain controller to authenticate against. DNS isn't a separate add-on to Active Directory; it's the foundation AD stands on. The "phone book" works in both the ways clients rely on: looking up the domain itself, and looking up the server by its full name. If clients can't resolve names, they can't find the DC to log in. Realizing that reframed how I think about the whole stack: names have to resolve before anything else can happen.
+
+
 
 <img width="1494" height="932" alt="ADDomain conf 1 4" src="https://github.com/user-attachments/assets/360ea563-fcf7-473b-9dfc-cf157d4879b4" />
 
+#### Test Name Resolve:
 
-### DHCP — and why the network wouldn't just let me turn it on
+<img width="1361" height="968" alt="DNS Manager Conf2 1" src="https://github.com/user-attachments/assets/b64f4859-b940-4ce7-999b-aea604a37e21" />
+
+#### Verify Test Name Resolve:
+
+<img width="1374" height="710" alt="NB-DCO1 DNS Res2 1PS" src="https://github.com/user-attachments/assets/8c97e95b-fab3-434b-9201-bf61f9477215" />
+
+#### Creating Reverse Lookup Zones 
+
+**Why: Scavenges stale records and updates them automatically, so the "phone book" stays accurate**
+
+<img width="1374" height="710" alt="NB-DCO1 DNS Res2 1PS" src="https://github.com/user-attachments/assets/ec707172-d7dc-42f2-8c4c-7942f0cd007a" />
+
+<img width="1321" height="930" alt="Reverese Zone lookup2 2" src="https://github.com/user-attachments/assets/0b49de93-afb5-4396-913d-bce94e1b68f2" />
+
+
+<img width="1914" height="1045" alt="DNS AutoAging Setup2 2 1" src="https://github.com/user-attachments/assets/64d02981-3970-4f1b-a63f-48c75b95a84f" />
+
+
+
+### Phase 3: DHCP — and why the network wouldn't just let me turn it on
 I had DHCP installed but it refused to hand out addresses. The error said it wasn't "authorized."
 
-**Why: In a domain, Windows refuses to let a DHCP server hand out addresses until it's been “authorized” in Active Directory. This is a safety feature that blocks rogue DHCP servers from disrupting a network.**
+**What clicked:** In a domain, Windows deliberately blocks a DHCP server from handing out addresses  until it's been authorized in Active Directory. It's a security control — it stops a rogue DHCP server from hijacking the network by handing out bad configuration. That was the first moment access control showed up as a *theme*: the system defaults to "no" and makes you prove you're allowed. I authorized it, created the address pool, and set the options that tell every client where to find DNS and the gateway.
 
+####  PowerShell Command (CLI) Running Server Confirmation 
 
-**What clicked:** in a domain, Windows deliberately blocks a DHCP server from working until it's been authorized in Active Directory. It's a security control — it stops a rogue DHCP server from hijacking the network by handing out bad configuration. That was the first moment access control showed up as a *theme*: the system defaults to "no" and makes you prove you're allowed. I authorized it, created the address pool, and set the options that tell every client where to find DNS and the gateway.
+<img width="1746" height="541" alt="Serv Running Conf3 1" src="https://github.com/user-attachments/assets/facc8b3d-2f9e-49eb-b383-727dbc6a9430" />
 
 #### Create Address Pool
 
@@ -74,7 +97,7 @@ I had DHCP installed but it refused to hand out addresses. The error said it was
 
 <img width="1912" height="1052" alt="DHCP Scope Completion3 2 1" src="https://github.com/user-attachments/assets/00bf1559-f4a9-4bf1-93a2-17895c062bdf" />
 
-##### Powershell (CLI) DHCP server scope confirmation:![Uploading DHCP Scope Completion3.2.1.png…]()
+##### PowerShell Command Line(CLI) DHCP server scope verification:
 
 <img width="1502" height="312" alt="PowerShell CLI Scop Conf3 2 2" src="https://github.com/user-attachments/assets/e1e02ebf-2393-4a29-9032-25ae00948f0b" />
 
