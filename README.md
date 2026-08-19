@@ -101,7 +101,7 @@ I built an organized folder structure (OUs) for departments, then created users.
 
 **What clicked:** this is *why* PowerShell exists in this world. I wrote a script that reads a spreadsheet and creates every account with a consistent username scheme, drops each person into their department's folder, and forces a password reset on first login. Then I built security groups and had a script auto-fill them by reading each user's department. Twenty users, correct and identical, in seconds. Automation stopped being a buzzword and became an obvious answer to a real problem I'd just felt.
 ```
-northbridge.local
+corp.marc.com
 └── OU=Northbridge
     ├── OU=Workstations
     ├── OU=Servers
