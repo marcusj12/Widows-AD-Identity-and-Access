@@ -134,6 +134,8 @@ I redundantly entered the same came cmmd that ran the powershell script containi
 
 #### Full Directory Check:
 
+```Get-ADUser -Filter * -SearchBase "OU=Employees,OU=Corp,DC=corp,DC=marc,DC=com" -Properties Department, UserPrincipalName | Select Name, SamAccountName, UserPrincipalName, Department```
+
 <img width="1202" height="702" alt="FullDirectoryCheck4 3 4" src="https://github.com/user-attachments/assets/b7ece018-7855-44bb-bf03-cc0e8a70e4f3" />
 
 
