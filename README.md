@@ -17,7 +17,7 @@ It's a work in progress on purpose. Part 1 (below) builds the foundation of *ide
 
 | Piece | What it is | Value |
 |---|---|---|
-| **NB-DCO1** | The domain controller — the "gatekeeper" holding all accounts | `192.168.163.133` (static) |
+| **NB-DC01** | The domain controller — the "gatekeeper" holding all accounts | `192.168.163.133` (static) |
 | **`corp.marc.com`** | The domain — the whole network "kingdom" | NetBIOS: `CORP` |
 | **Network** | Isolated lab subnet in VirtualBox | `192.168.163.0/24` |
 
@@ -62,7 +62,7 @@ At one point I panicked because I didn't remember ever installing DNS. It turned
 
 #### Verify Test Name Resolve:
 
-<img width="1374" height="710" alt="NB-DCO1 DNS Res2 1PS" src="https://github.com/user-attachments/assets/8c97e95b-fab3-434b-9201-bf61f9477215" />
+<img width="1374" height="710" alt="NB-DC01 DNS Res2 1PS" src="https://github.com/user-attachments/assets/8c97e95b-fab3-434b-9201-bf61f9477215" />
 
 #### Creating Reverse Lookup Zones 
 
