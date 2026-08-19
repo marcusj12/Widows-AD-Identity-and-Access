@@ -130,6 +130,8 @@ I redundantly entered the same came cmmd that ran the powershell script containi
 
 #### UserName Check:
 
+```Get-ADUser -Filter * -SearchBase "OU=Employees,OU=Corp,DC=corp,DC=marc,DC=com" -Properties Department| Select Name, Department```
+
 <img width="1188" height="645" alt="UserNameDepCheck4 3 3" src="https://github.com/user-attachments/assets/91f29598-4e17-4020-b3af-fad0c2b14a43" />
 
 #### Full Directory Check:
