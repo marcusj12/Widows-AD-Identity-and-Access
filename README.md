@@ -185,23 +185,6 @@ The meta-lesson: **most "errors" are messages, not disasters.** Reading them slo
 
 ---
 
-## Repo structure
-
-```
-.
-├── README.md
-├── scripts/
-│   ├── Cre.ps1
-│   ├── CreateSecGroups.ps1
-│   └── users.csv
-└── screenshots/
-    ├── architecture.png
-    ├── phase1-dcdiag.png
-    ├── phase2-dns-zone.png
-    ├── phase3-dhcp-scope.png
-    └── phase4-users-groups.png
-```
-
 ## Notes
 
 Isolated lab environment for study. The domain, users, and credentials are fictional and live only inside a local VM. Any passwords in scripts are throwaway lab values, changed on first logon.
