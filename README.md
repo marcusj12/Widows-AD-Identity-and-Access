@@ -96,11 +96,21 @@ I had DHCP installed but it refused to hand out addresses. The error said it was
 
 <img width="1502" height="312" alt="PowerShell CLI Scop Conf3 2 2" src="https://github.com/user-attachments/assets/e1e02ebf-2393-4a29-9032-25ae00948f0b" />
 
-### Users, groups, and structure — where automation started to make sense
+### Phase4: Users, groups, and structure — where automation started to make sense
 I built an organized folder structure (OUs) for departments, then created users. Doing the first few by hand in the GUI was tedious; doing 20 that way would have been miserable.
 
 **What clicked:** this is *why* PowerShell exists in this world. I wrote a script that reads a spreadsheet and creates every account with a consistent username scheme, drops each person into their department's folder, and forces a password reset on first login. Then I built security groups and had a script auto-fill them by reading each user's department. Twenty users, correct and identical, in seconds. Automation stopped being a buzzword and became an obvious answer to a real problem I'd just felt.
-
+```
+northbridge.local
+└── OU=Northbridge
+    ├── OU=Workstations
+    ├── OU=Servers
+    ├── OU=Groups
+    └── OU=Employees
+        ├── OU=IT
+        ├── OU=Finance
+        └── OU=Sales
+```
 #### Create a users.csv file
 <img width="1095" height="666" alt="UserNameCsv4 2" src="https://github.com/user-attachments/assets/5b514a92-86f1-4174-a858-52e3ae5daeda" />
 
