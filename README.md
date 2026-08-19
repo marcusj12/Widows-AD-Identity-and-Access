@@ -5,7 +5,7 @@
 
 ## Why I built this
 
-I kept running into the same wall while studying: I could recite what Active Directory, DNS, DHCP, and Group Policy *where*, but I couldn't really explain how they depended on each other, or what actually happens when a user logs in. Definitions weren't turning into understanding.
+I kept running into the same wall while studying: I could recite what Active Directory, DNS, DHCP, and Group Policy *were*, but I couldn't really explain how they depended on each other, or what actually happens when a user logs in. Definitions weren't turning into understanding.
 
 So I built the thing from scratch. One Windows Server, a fake company (`corp.marc.com`), and a rule for myself: **don't move to the next step until I can explain why the last one was necessary.** This repo is the record of that — what I set up, what broke, what confused me, and what finally made it click.
 
